@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehmet Resul Yılmaz | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f6f8fa;
+      --color-bg-card: #fff;
+      --color-text: #222;
+      --color-accent: #2563eb;
+      --color-border: #e5e7eb;
+      --color-shadow: rgba(37,99,235,0.07);
+      --color-btn: #2563eb;
+      --color-btn-text: #fff;
+      --color-btn-hover: #1e40af;
+      --transition: 0.25s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #181a1b;
+      --color-bg-card: #23272f;
+      --color-text: #f3f4f6;
+      --color-accent: #60a5fa;
+      --color-border: #2d3748;
+      --color-shadow: rgba(96,165,250,0.09);
+      --color-btn: #60a5fa;
+      --color-btn-text: #181a1b;
+      --color-btn-hover: #2563eb;
+    }
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+      transition: background var(--transition), color var(--transition);
+    }
+    .main-container {
+      max-width: 540px;
+      margin: 48px auto 0 auto;
+      background: var(--color-bg-card);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px var(--color-shadow);
+      padding: 2.5rem 2rem 2rem 2rem;
+      border: 1px solid var(--color-border);
+      transition: background var(--transition), box-shadow var(--transition);
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 3px solid var(--color-accent);
+      object-fit: cover;
+      box-shadow: 0 2px 12px var(--color-shadow);
+      background: #fff;
+    }
+    .profile-info h1 {
+      margin: 0 0 0.3em 0;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .profile-info .role {
+      color: var(--color-accent);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+    }
+    .about {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+      color: var(--color-text);
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      background: var(--color-btn);
+      color: var(--color-btn-text);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px var(--color-shadow);
+      transition: background var(--transition), color var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle:hover {
+      background: var(--color-btn-hover);
+    }
+    .projects-section {
+      margin-top: 2.5rem;
+    }
+    .projects-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+    .project-list {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .project-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 2px 8px var(--color-shadow);
+      transition: box-shadow var(--transition), border var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .project-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+    .project-card p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--color-text);
+      opacity: 0.92;
+    }
+    .project-card a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.97rem;
+      margin-top: 0.2rem;
+      transition: color var(--transition);
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+      color: var(--color-btn-hover);
+    }
+    @media (max-width: 600px) {
+      .main-container {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+        margin-top: 18px;
+      }
+      .profile {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+      }
+      .theme-toggle {
+        top: 12px;
+        right: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Tema Değiştir">🌙</button>
+  <main class="main-container">
+    <section class="profile">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Mehmet+Resul+Yilmaz&background=2563eb&color=fff&size=128" alt="Mehmet Resul Yılmaz">
+      <div class="profile-info">
+        <h1>Mehmet Resul Yılmaz</h1>
+        <div class="role">Frontend Developer</div>
+      </div>
+    </section>
+    <div class="about">
+      Merhaba! Ben Mehmet Resul Yılmaz. Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyorum. React ve güncel web teknolojileriyle ilgileniyorum. Yakında projelerimi burada paylaşacağım. 
+    </div>
+    <section class="projects-section">
+      <div class="projects-title">Projelerim</div>
+      <div class="project-list">
+        <!-- Projelerini buraya ekleyebilirsin -->
+        <!--
+        <div class="project-card">
+          <h3>Proje Adı</h3>
+          <p>Kısa açıklama...</p>
+          <a href="#" target="_blank">Projeye Git</a>
+        </div>
+        -->
+        <div style="color:var(--color-border);font-size:1rem;">Henüz proje eklenmedi.</div>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Tema tercihini yükle
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const themeBtn = document.getElementById('themeToggle');
+    function setTheme(theme) {
+      body.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    // İlk yükleme
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeBtn.addEventListener('click', () => {
+      const current = body.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+  </script>
+</body>
+</html>
