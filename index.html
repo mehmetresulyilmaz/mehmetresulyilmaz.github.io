@@ -3,254 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehmet Resul Yılmaz | Portfolio</title>
+  <title>Mehmet Resul Yılmaz | Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-bg: #f6f8fa;
-      --color-bg-card: #fff;
-      --color-text: #222;
-      --color-accent: #2563eb;
-      --color-border: #e5e7eb;
-      --color-shadow: rgba(37,99,235,0.07);
-      --color-btn: #2563eb;
-      --color-btn-text: #fff;
-      --color-btn-hover: #1e40af;
-      --transition: 0.25s cubic-bezier(.4,0,.2,1);
-    }
-    [data-theme="dark"] {
-      --color-bg: #181a1b;
-      --color-bg-card: #23272f;
-      --color-text: #f3f4f6;
-      --color-accent: #60a5fa;
-      --color-border: #2d3748;
-      --color-shadow: rgba(96,165,250,0.09);
-      --color-btn: #60a5fa;
-      --color-btn-text: #181a1b;
-      --color-btn-hover: #2563eb;
-    }
-    html {
-      box-sizing: border-box;
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: 'Inter', Arial, sans-serif;
-      min-height: 100vh;
-      transition: background var(--transition), color var(--transition);
-    }
-    .main-container {
-      max-width: 540px;
-      margin: 48px auto 0 auto;
-      background: var(--color-bg-card);
-      border-radius: 18px;
-      box-shadow: 0 8px 32px var(--color-shadow);
-      padding: 2.5rem 2rem 2rem 2rem;
-      border: 1px solid var(--color-border);
-      transition: background var(--transition), box-shadow var(--transition);
-      animation: fadeIn 1s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      border: 3px solid var(--color-accent);
-      object-fit: cover;
-      box-shadow: 0 2px 12px var(--color-shadow);
-      background: #fff;
-    }
-    .profile-info h1 {
-      margin: 0 0 0.3em 0;
-      font-size: 2.1rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-    .profile-info .role {
-      color: var(--color-accent);
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 0.5em;
-    }
-    .about {
-      font-size: 1.08rem;
-      line-height: 1.7;
-      margin-bottom: 2.2rem;
-      color: var(--color-text);
-    }
-    .theme-toggle {
-      position: absolute;
-      top: 32px;
-      right: 32px;
-      background: var(--color-btn);
-      color: var(--color-btn-text);
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.3rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px var(--color-shadow);
-      transition: background var(--transition), color var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .theme-toggle:hover {
-      background: var(--color-btn-hover);
-    }
-    .projects-section {
-      margin-top: 2.5rem;
-    }
-    .projects-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.5px;
-    }
-    .project-list {
-      display: grid;
-      gap: 1.2rem;
-    }
-    .project-card {
-      background: linear-gradient(120deg, var(--color-bg-card) 80%, var(--color-bg) 100%);
-      border: 1.5px solid var(--color-border);
-      border-radius: 14px;
-      padding: 1.3rem 1.4rem 1.1rem 1.4rem;
-      box-shadow: 0 4px 18px var(--color-shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      transition: box-shadow var(--transition), border var(--transition), transform var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card:hover {
-      box-shadow: 0 8px 32px var(--color-shadow);
-      border-color: var(--color-accent);
-      transform: translateY(-4px) scale(1.025);
-    }
-    .project-card h3 {
-      margin: 0;
-      font-size: 1.13rem;
-      color: var(--color-accent);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-    }
-    .project-card .repo-icon {
-      font-size: 1.1em;
-      color: var(--color-border);
-      margin-right: 0.2em;
-    }
-    .project-card p {
-      margin: 0;
-      font-size: 1.01rem;
-      color: var(--color-text);
-      opacity: 0.95;
-      font-weight: 400;
-    }
-    .project-card .project-meta {
-      display: flex;
-      gap: 1.2em;
-      font-size: 0.93rem;
-      color: var(--color-border);
-      margin-top: 0.2em;
-      align-items: center;
-    }
-    .project-card .project-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.3em;
-    }
-    .project-card .project-links {
-      margin-top: 0.5em;
-      display: flex;
-      gap: 0.7em;
-    }
-    .project-card .project-btn {
-      background: var(--color-btn);
-      color: var(--color-btn-text);
-      border: none;
-      border-radius: 6px;
-      padding: 0.38em 1.1em;
-      font-size: 0.97rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
-      box-shadow: 0 1px 4px var(--color-shadow);
-      display: flex;
-      align-items: center;
-      gap: 0.4em;
-    }
-    .project-card .project-btn.github {
-      background: #23272f;
-      color: #fff;
-    }
-    .project-card .project-btn.github:hover {
-      background: #333b4a;
-      color: #60a5fa;
-    }
-    .project-card .project-btn.demo:hover {
-      background: var(--color-btn-hover);
-      color: var(--color-btn-text);
-    }
-    @media (max-width: 600px) {
-      .main-container {
-        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
-        margin-top: 18px;
-      }
-      .profile {
-        flex-direction: column;
-        gap: 0.8rem;
-        text-align: center;
-      }
-      .theme-toggle {
-        top: 12px;
-        right: 12px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle" aria-label="Tema Değiştir">🌙</button>
-  <main class="main-container">
-    <section class="profile">
-      <img class="avatar" src="https://ui-avatars.com/api/?name=Mehmet+Resul+Yilmaz&background=2563eb&color=fff&size=128" alt="Mehmet Resul Yılmaz">
-      <div class="profile-info">
-        <h1>Mehmet Resul Yılmaz</h1>
-        <div class="role">Frontend Developer</div>
+  <header class="minimal-header">
+    <div class="minimal-logo">Mehmet Resul Yılmaz</div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Tema Değiştir">🌙</button>
+  </header>
+  <main class="minimal-main">
+    <section class="hero">
+      <h1 class="hero-title">Frontend Developer</h1>
+      <p class="hero-desc">Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyorum. <span class="highlight">React</span>, <span class="highlight">TypeScript</span> ve güncel web teknolojileriyle ilgileniyorum.</p>
+      <div class="hero-socials">
+        <a href="https://github.com/mehmetresulyilmaz" target="_blank" aria-label="GitHub"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.47A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg></a>
+        <a href="mailto:mehmetresulyilmaz@gmail.com" aria-label="Mail"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 20v-9.99l7.29 6.36a1 1 0 0 0 1.42 0L20 10.01V20H4Z"/></svg></a>
       </div>
     </section>
-    <div class="about">
-      Merhaba! Ben Mehmet Resul Yılmaz. Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyorum. React ve güncel web teknolojileriyle ilgileniyorum. Yakında projelerimi burada paylaşacağım. 
-    </div>
-    <section class="projects-section">
-      <div class="projects-title">Projelerim</div>
+    <section class="minimal-projects" id="projects">
+      <h2 class="projects-title">Projelerim</h2>
       <div class="project-list" id="projectList">
         <div style="color:var(--color-border);font-size:1rem;" id="noProjects">Henüz proje eklenmedi.</div>
       </div>
     </section>
+    <footer class="minimal-footer">
+      <span>© 2025 Mehmet Resul Yılmaz</span>
+    </footer>
   </main>
+  <button class="up-btn" id="upBtn" aria-label="Yukarı Çık">↑</button>
   <script>
     // Tema tercihini yükle
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -260,9 +42,8 @@
     function setTheme(theme) {
       body.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
-      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeBtn.textContent = theme === 'light' ? '🌙' : '☀️';
     }
-    // İlk yükleme
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
@@ -285,7 +66,6 @@
           repo.name !== `${username.toLowerCase()}.github.io`
         ) {
           found = true;
-          // Ekstra bilgi için repo detaylarını çek
           let language = repo.language || '';
           let stars = repo.stargazers_count || 0;
           const projectUrl = `https://${username}.github.io/${repo.name}/`;
@@ -293,11 +73,11 @@
           const card = document.createElement('div');
           card.className = 'project-card';
           card.innerHTML = `
-            <h3><span class="repo-icon">📦</span>${repo.name}</h3>
+            <h3>${repo.name}</h3>
             <p>${repo.description ? repo.description : 'Açıklama yok.'}</p>
             <div class="project-meta">
-              ${language ? `<span title="Dil"><svg width='14' height='14' style='margin-right:2px;vertical-align:middle' viewBox='0 0 16 16'><circle cx='7' cy='8' r='6' fill='#60a5fa'/></svg>${language}</span>` : ''}
-              <span title="Yıldız"><svg width='14' height='14' style='margin-right:2px;vertical-align:middle' viewBox='0 0 16 16'><path d='M8 1.3l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 11.6l-4.2 2.2.8-4.7L1.2 6.3l4.7-.7L8 1.3z' fill='#facc15'/></svg>${stars}</span>
+              ${language ? `<span title="Dil">${language}</span>` : ''}
+              <span title="Yıldız">★ ${stars}</span>
             </div>
             <div class="project-links">
               <a class="project-btn demo" href="${projectUrl}" target="_blank" rel="noopener">Canlı Demo</a>
@@ -310,6 +90,18 @@
       if (found && noProjects) noProjects.remove();
     }
     fetchGithubPagesProjects('mehmetresulyilmaz');
+    // Up butonu göster/gizle ve yukarı kaydırma
+    const upBtn = document.getElementById('upBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        upBtn.classList.add('visible');
+      } else {
+        upBtn.classList.remove('visible');
+      }
+    });
+    upBtn.addEventListener('click', () => {
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
   </script>
 </body>
 </html>
