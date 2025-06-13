@@ -67,6 +67,25 @@
         ) {
           found = true;
           let language = repo.language || '';
+          let langBarHtml = '';
+          if (repo.languages_url) {
+            try {
+              const langRes = await fetch(repo.languages_url);
+              const langs = await langRes.json();
+              const total = Object.values(langs).reduce((a, b) => a + b, 0);
+              const langKeys = Object.keys(langs);
+              if (langKeys.length > 0) {
+                langBarHtml = `<div class=\"lang-bar\">` + langKeys.map(key => `
+                  <span class=\"lang-chip\">
+                    <span class=\"lang-dot\" style=\"background:${getLangColor(key)}\"></span>
+                    ${key} <span class=\"lang-percent\">${((langs[key]/total)*100).toFixed(1)}%</span>
+                  </span>`).join('') + `</div>`;
+                language = langKeys.map(key => `${key} (${((langs[key]/total)*100).toFixed(1)}%)`).join(', ');
+              }
+            } catch (e) {
+              // Hata olursa ana dil ile devam et
+            }
+          }
           let stars = repo.stargazers_count || 0;
           const projectUrl = `https://${username}.github.io/${repo.name}/`;
           const githubUrl = repo.html_url;
@@ -76,7 +95,7 @@
             <h3>${repo.name}</h3>
             <p>${repo.description ? repo.description : 'Açıklama yok.'}</p>
             <div class="project-meta">
-              ${language ? `<span title="Dil">${language}</span>` : ''}
+              ${langBarHtml}
               <span title="Yıldız">★ ${stars}</span>
             </div>
             <div class="project-links">
@@ -102,6 +121,30 @@
     upBtn.addEventListener('click', () => {
       window.scrollTo({top:0, behavior:'smooth'});
     });
+    // Modern renkli dil noktası ve yüzdelik için yardımcı fonksiyon
+    function getLangColor(lang) {
+      const colors = {
+        'HTML': '#e34c26',
+        'CSS': '#563d7c',
+        'JavaScript': '#f1e05a',
+        'TypeScript': '#3178c6',
+        'Python': '#3572A5',
+        'Java': '#b07219',
+        'C++': '#f34b7d',
+        'C#': '#178600',
+        'Shell': '#89e051',
+        'Go': '#00ADD8',
+        'PHP': '#4F5D95',
+        'Ruby': '#701516',
+        'Kotlin': '#A97BFF',
+        'Swift': '#ffac45',
+        'Dart': '#00B4AB',
+        'Vue': '#41b883',
+        'SCSS': '#c6538c',
+        'Other': '#ccc'
+      };
+      return colors[lang] || '#ccc';
+    }
   </script>
 </body>
 </html>
