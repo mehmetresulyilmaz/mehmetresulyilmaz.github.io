@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehmet Resul Yılmaz | Creative Developer</title>
+    <meta name="google-site-verification" content="VDoGPqrDfHs5YGWsfkMr9U7KKNyYj3LINZfjNpLW7sY" />
+    <!-- ==============================================
+         SEO AYARLARI (Google'ın Sizi Bulması İçin)
+    =============================================== -->
+    <title>Mehmet Resul Yılmaz | Full Stack Yazılım Geliştirici & Portfolyo</title>
+    
+    <!-- Google Arama Sonuçlarında Çıkacak Açıklama -->
+    <meta name="description" content="Mehmet Resul Yılmaz'ın kişisel yazılım portfolyosu. Full Stack Developer projeleri, açık kaynak katkıları, JavaScript, Python ve modern web teknolojileri üzerine çalışmalar.">
+    
+    <!-- Google'ın Sizi Eşleştireceği Kelimeler -->
+    <meta name="keywords" content="Mehmet Resul Yılmaz, Yazılım Mühendisi, Software Developer, Web Geliştirici, Portfolyo, GitHub Projeleri, Full Stack, Frontend, Backend">
+    
+    <!-- Yazar ve Bot Ayarları -->
+    <meta name="author" content="Mehmet Resul Yılmaz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mehmetresulyilmaz.github.io/">
+
+    <!-- Sosyal Medya Paylaşım Kartları (Open Graph) -->
+    <meta property="og:title" content="Mehmet Resul Yılmaz - Developer Portfolio">
+    <meta property="og:description" content="Modern web teknolojileri ve yaratıcı yazılım çözümleri. Projelerimi inceleyin.">
+    <meta property="og:image" content="https://github.com/mehmetresulyilmaz.png">
+    <meta property="og:url" content="https://mehmetresulyilmaz.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Stil ve Scriptler -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
@@ -20,13 +44,14 @@
                         cyber: {
                             black: '#050505',
                             dark: '#0a0a0f',
-                            primary: '#00ff9d', // Neon Green
-                            secondary: '#bc13fe', // Neon Purple
+                            primary: '#00ff9d', 
+                            secondary: '#bc13fe',
                             dim: 'rgba(0, 255, 157, 0.1)'
                         }
                     },
                     animation: {
                         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 15s linear infinite',
                     }
                 }
             }
@@ -34,115 +59,48 @@
     </script>
 
     <style>
-        body {
-            background-color: #050505;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-
-        /* Parçacık Arka Planı */
-        #canvas-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* Scrollbar */
+        body { background-color: #050505; color: #e0e0e0; overflow-x: hidden; }
+        #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0f; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #00ff9d; }
 
-        /* Glitch Effect Class */
-        .glitch {
-            position: relative;
-            color: #fff;
-        }
+        .glitch { position: relative; color: #fff; }
         .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #050505;
+            content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #050505;
         }
         .glitch::before {
-            left: 2px;
-            text-shadow: -1px 0 #bc13fe;
-            clip: rect(24px, 550px, 90px, 0);
-            animation: glitch-anim 3s infinite linear alternate-reverse;
+            left: 2px; text-shadow: -1px 0 #bc13fe; clip: rect(24px, 550px, 90px, 0); animation: glitch-anim 3s infinite linear alternate-reverse;
         }
         .glitch::after {
-            left: -2px;
-            text-shadow: -1px 0 #00ff9d;
-            clip: rect(85px, 550px, 140px, 0);
-            animation: glitch-anim 2s infinite linear alternate-reverse;
+            left: -2px; text-shadow: -1px 0 #00ff9d; clip: rect(85px, 550px, 140px, 0); animation: glitch-anim 2s infinite linear alternate-reverse;
         }
         @keyframes glitch-anim {
-            0% { clip: rect(10px, 9999px, 31px, 0); }
-            20% { clip: rect(70px, 9999px, 68px, 0); }
-            40% { clip: rect(35px, 9999px, 6px, 0); }
-            60% { clip: rect(80px, 9999px, 15px, 0); }
-            80% { clip: rect(15px, 9999px, 88px, 0); }
-            100% { clip: rect(60px, 9999px, 2px, 0); }
+            0% { clip: rect(10px, 9999px, 31px, 0); } 20% { clip: rect(70px, 9999px, 68px, 0); }
+            40% { clip: rect(35px, 9999px, 6px, 0); } 60% { clip: rect(80px, 9999px, 15px, 0); }
+            80% { clip: rect(15px, 9999px, 88px, 0); } 100% { clip: rect(60px, 9999px, 2px, 0); }
         }
 
-        /* Holografik Kartlar */
         .holo-card {
-            background: rgba(10, 10, 15, 0.6);
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: rgba(10, 10, 15, 0.6); border: 1px solid rgba(0, 255, 157, 0.1); backdrop-filter: blur(10px);
+            transition: all 0.4s ease; position: relative; overflow: hidden;
         }
-        .holo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.1), transparent);
-            transition: 0.5s;
-        }
-        .holo-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff9d;
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
-        }
-        .holo-card:hover::before {
-            left: 100%;
-        }
+        .holo-card:hover { transform: translateY(-5px); border-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 255, 157, 0.2); }
         
-        /* Scanline Effect */
         .scanlines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
-            background-size: 100% 4px;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.6;
+            background-size: 100% 4px; pointer-events: none; z-index: 50; opacity: 0.6;
         }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="font-rajdhani min-h-screen flex flex-col relative">
 
-    <!-- Canvas Background -->
     <canvas id="canvas-bg"></canvas>
-    
-    <!-- CRT Scanline Overlay -->
     <div class="scanlines"></div>
 
-    <!-- Navigation -->
     <nav class="w-full py-6 px-4 md:px-12 flex justify-between items-center backdrop-blur-sm border-b border-white/5 z-40 relative">
         <div class="text-2xl font-orbitron font-bold text-white tracking-wider">
             M<span class="text-cyber-primary">R</span>Y
@@ -153,13 +111,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="about" class="flex-grow flex items-center justify-center px-4 relative z-10 py-20">
         <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            
-            <!-- Text Content -->
             <div class="order-2 md:order-1 animate-slide-in">
                 <div class="text-cyber-primary font-mono mb-2 text-lg">System.Initialize(User);</div>
+                <!-- H1 Etiketi SEO için çok önemlidir -->
                 <h1 class="text-5xl md:text-7xl font-bold font-orbitron text-white mb-4 glitch" data-text="MEHMET RESUL">
                     MEHMET RESUL
                 </h1>
@@ -170,9 +126,8 @@
                     Full Stack Developer ve Açık Kaynak meraklısı.
                     Dijital dünyada modern çözümler ve yaratıcı arayüzler tasarlıyorum.
                 </p>
-                
                 <div class="flex gap-4">
-                    <a href="https://github.com/mehmetresulyilmaz" target="_blank" class="px-8 py-3 bg-cyber-primary/10 border border-cyber-primary text-cyber-primary font-bold hover:bg-cyber-primary hover:text-black transition-all duration-300 clip-path-button">
+                    <a href="https://github.com/mehmetresulyilmaz" target="_blank" class="px-8 py-3 bg-cyber-primary/10 border border-cyber-primary text-cyber-primary font-bold hover:bg-cyber-primary hover:text-black transition-all duration-300">
                         GITHUB <i class="fab fa-github ml-2"></i>
                     </a>
                     <a href="mailto:mehmetresulyilmaz@gmail.com" class="px-8 py-3 bg-transparent border border-gray-600 text-gray-300 font-bold hover:border-cyber-secondary hover:text-cyber-secondary transition-all duration-300">
@@ -180,20 +135,16 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Avatar / Graphic -->
             <div class="order-1 md:order-2 flex justify-center relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-cyber-primary to-cyber-secondary opacity-20 blur-3xl rounded-full"></div>
-                <img src="https://github.com/mehmetresulyilmaz.png" alt="Avatar" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-cyber-dark relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-[0_0_30px_rgba(0,255,157,0.3)]">
-                
-                <!-- Dekoratif Daireler -->
+                <!-- Alt etiketi SEO için önemlidir -->
+                <img src="https://github.com/mehmetresulyilmaz.png" alt="Mehmet Resul Yılmaz Profil Fotoğrafı" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-cyber-dark relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-[0_0_30px_rgba(0,255,157,0.3)]">
                 <div class="absolute w-60 h-60 md:w-80 md:h-80 border border-cyber-primary/30 rounded-full animate-pulse-fast"></div>
-                <div class="absolute w-72 h-72 md:w-96 md:h-96 border border-dashed border-cyber-secondary/30 rounded-full animate-spin-slow" style="animation-duration: 20s;"></div>
+                <div class="absolute w-72 h-72 md:w-96 md:h-96 border border-dashed border-cyber-secondary/30 rounded-full animate-spin-slow"></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
             <div class="flex items-end gap-4 mb-12 border-b border-gray-800 pb-4">
@@ -202,23 +153,16 @@
                 </h2>
                 <span class="text-gray-500 font-mono text-sm mb-1 hidden md:block">Fetching from GitHub API...</span>
             </div>
-
-            <!-- Loading Spinner -->
             <div id="loader" class="flex justify-center py-20">
                 <div class="relative w-16 h-16">
                     <div class="absolute w-full h-full border-4 border-cyber-primary/30 rounded-full"></div>
-                    <div class="absolute w-full h-full border-t-4 border-cyber-primary rounded-full animate-spin"></div>
+                    <div class="absolute w-full h-full border-t-4 border-cyber-primary rounded-full" style="animation: spin 1s linear infinite;"></div>
                 </div>
             </div>
-
-            <!-- Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
-                <!-- JS ile Doldurulacak -->
-            </div>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-8 text-center border-t border-white/10 relative z-10 bg-cyber-black">
         <p class="text-gray-500 text-sm font-mono">
             &copy; 2025 Mehmet Resul Yılmaz <br>
@@ -226,212 +170,88 @@
         </p>
     </footer>
 
-    <!-- JavaScripts -->
     <script>
-        /* ----------------------------------------------------------------
-           1. PARTICLE BACKGROUND ANIMATION (CANVAS)
-           ---------------------------------------------------------------- */
+        // --- CANVAS ANIMATION ---
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
-
         let particlesArray;
-
-        // Canvas boyutunu ayarla
-        function setCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         setCanvasSize();
-
-        window.addEventListener('resize', () => {
-            setCanvasSize();
-            initParticles();
-        });
-
-        // Mouse Etkileşimi
-        const mouse = {
-            x: null,
-            y: null,
-            radius: 150
-        }
-
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-
-        // Parçacık Sınıfı
+        window.addEventListener('resize', () => { setCanvasSize(); initParticles(); });
         class Particle {
-            constructor(x, y, directionX, directionY, size, color) {
-                this.x = x;
-                this.y = y;
-                this.directionX = directionX;
-                this.directionY = directionY;
-                this.size = size;
-                this.color = color;
+            constructor(x, y, directionX, directionY, size) {
+                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size;
             }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = '#00ff9d';
-                ctx.fill();
-            }
-
+            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = '#00ff9d'; ctx.fill(); }
             update() {
-                // Sınır kontrolü
                 if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
                 if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-
-                // Mouse'dan kaçma efekti (İsteğe bağlı)
-                // let dx = mouse.x - this.x;
-                // let dy = mouse.y - this.y;
-                // let distance = Math.sqrt(dx*dx + dy*dy);
-                // if (distance < mouse.radius + this.size){
-                //     if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 10;
-                //     if (mouse.x > this.x && this.x > this.size * 10) this.x -= 10;
-                //     if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 10;
-                //     if (mouse.y > this.y && this.y > this.size * 10) this.y -= 10;
-                // }
-
-                this.x += this.directionX;
-                this.y += this.directionY;
-                this.draw();
+                this.x += this.directionX; this.y += this.directionY; this.draw();
             }
         }
-
-        // Parçacıkları Başlat
         function initParticles() {
             particlesArray = [];
-            // Ekran boyutuna göre parçacık sayısı
             let numberOfParticles = (canvas.height * canvas.width) / 15000; 
             for (let i = 0; i < numberOfParticles; i++) {
                 let size = (Math.random() * 2) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 1) - 0.5; // Hız
-                let directionY = (Math.random() * 1) - 0.5;
-                let color = '#00ff9d';
-
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                let directionX = (Math.random() * 1) - 0.5; let directionY = (Math.random() * 1) - 0.5;
+                particlesArray.push(new Particle(x, y, directionX, directionY, size));
             }
         }
-
-        // Çizgileri Birleştir
         function connect() {
-            let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
                     if (distance < (canvas.width/7) * (canvas.height/7)) {
-                        opacityValue = 1 - (distance/20000);
-                        ctx.strokeStyle = 'rgba(0, 255, 157,' + opacityValue + ')';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
+                        ctx.strokeStyle = 'rgba(0, 255, 157,' + (1 - (distance/20000)) + ')';
+                        ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(particlesArray[a].x, particlesArray[a].y); ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
                     }
                 }
             }
         }
+        function animate() { requestAnimationFrame(animate); ctx.clearRect(0, 0, innerWidth, innerHeight); for (let i = 0; i < particlesArray.length; i++) particlesArray[i].update(); connect(); }
 
-        // Animasyon Döngüsü
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, innerWidth, innerHeight);
-            
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-            }
-            connect();
-        }
-
-        /* ----------------------------------------------------------------
-           2. GITHUB API INTEGRATION
-           ---------------------------------------------------------------- */
+        // --- GITHUB API & FILTER ---
         const GITHUB_USERNAME = 'mehmetresulyilmaz';
-        
-        const langColors = {
-            'JavaScript': 'text-yellow-400',
-            'TypeScript': 'text-blue-400',
-            'Python': 'text-blue-500',
-            'HTML': 'text-orange-500',
-            'CSS': 'text-blue-300',
-            'Vue': 'text-green-400',
-            'C#': 'text-green-500'
-        };
+        const HIDDEN_REPOS = ['mehmetresulyilmaz.github.io', 'mehmetresulyilmaz'];
+        const langColors = { 'JavaScript': 'text-yellow-400', 'TypeScript': 'text-blue-400', 'Python': 'text-blue-500', 'HTML': 'text-orange-500', 'CSS': 'text-blue-300', 'Vue': 'text-green-400', 'C#': 'text-green-500' };
 
         async function fetchProjects() {
             try {
-                const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=9`);
-                const repos = await res.json();
+                const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
+                let repos = await res.json();
+                repos = repos.filter(repo => !HIDDEN_REPOS.includes(repo.name));
+                const topRepos = repos.slice(0, 9);
                 
                 const grid = document.getElementById('projects-grid');
-                const loader = document.getElementById('loader');
-
-                // Yükleme tamamlandı
-                loader.classList.add('hidden');
+                document.getElementById('loader').classList.add('hidden');
                 grid.classList.remove('hidden');
 
-                repos.forEach((repo, index) => {
+                topRepos.forEach((repo) => {
                     const langClass = langColors[repo.language] || 'text-gray-400';
-                    const delay = index * 100; // Animasyon gecikmesi
-
-                    // Homepage kontrolü
-                    let liveLinkHtml = '';
-                    if (repo.homepage) {
-                        liveLinkHtml = `
-                        <a href="${repo.homepage}" target="_blank" class="flex items-center gap-1 text-cyber-secondary hover:text-white transition-colors text-sm font-bold">
-                             <i class="fas fa-bolt"></i> LIVE DEMO
-                        </a>`;
-                    }
+                    let liveLinkHtml = repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="flex items-center gap-1 text-cyber-secondary hover:text-white transition-colors text-sm font-bold"><i class="fas fa-bolt"></i> LIVE DEMO</a>` : '';
 
                     const card = document.createElement('div');
-                    card.className = 'holo-card p-6 rounded-xl flex flex-col h-full animate-fade-in-up';
+                    card.className = 'holo-card p-6 rounded-xl flex flex-col h-full';
                     card.innerHTML = `
                         <div class="flex justify-between items-start mb-4">
                             <i class="far fa-folder text-3xl text-cyber-primary"></i>
-                            <div class="flex gap-3">
-                                ${liveLinkHtml}
-                                <a href="${repo.html_url}" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <div class="flex gap-3">${liveLinkHtml}<a href="${repo.html_url}" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-github"></i></a></div>
                         </div>
-
                         <h3 class="text-xl font-orbitron font-bold text-white mb-2 truncate">${repo.name}</h3>
-                        
-                        <p class="text-gray-400 text-sm font-mono mb-6 flex-grow line-clamp-3 leading-relaxed">
-                            ${repo.description || 'No classified description available for this project.'}
-                        </p>
-
+                        <p class="text-gray-400 text-sm font-mono mb-6 flex-grow line-clamp-3 leading-relaxed">${repo.description || 'Proje detayları gizli tutulmuştur.'}</p>
                         <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                            <span class="font-mono text-sm ${langClass}">
-                                ${repo.language || 'Code'}
-                            </span>
-                            <div class="flex gap-4 text-sm text-gray-500 font-mono">
-                                <span><i class="fas fa-star text-yellow-500/80"></i> ${repo.stargazers_count}</span>
-                                <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-                            </div>
-                        </div>
-                    `;
-                    
+                            <span class="font-mono text-sm ${langClass}">${repo.language || 'Code'}</span>
+                            <div class="flex gap-4 text-sm text-gray-500 font-mono"><span><i class="fas fa-star text-yellow-500/80"></i> ${repo.stargazers_count}</span><span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span></div>
+                        </div>`;
                     grid.appendChild(card);
                 });
-
-            } catch (error) {
-                document.getElementById('loader').innerHTML = '<div class="text-red-500 font-mono">SYSTEM ERROR: API Connection Failed.</div>';
-            }
+            } catch (error) { console.error(error); }
         }
 
-        // Başlat
-        initParticles();
-        animate();
-        fetchProjects();
-
+        initParticles(); animate(); fetchProjects();
     </script>
 </body>
 </html>
