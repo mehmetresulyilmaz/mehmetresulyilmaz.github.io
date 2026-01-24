@@ -441,9 +441,22 @@
                 localStorage.theme = 'dark';
             }
         }
+<footer class="md:col-span-4 py-12 text-center order-10 w-full">
+            <p class="text-sm font-sans opacity-50 dark:text-neutral-400">
+                Created by <strong class="text-gray-900 dark:text-white font-semibold">Fuzuli Medya</strong> © 2026
+            </p>
+        </footer>
+
+    </div> <script>
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
     </script>
-    <footer style="width: 100%; text-align: center; margin-top: 40px; padding-bottom: 20px; font-family: sans-serif; opacity: 0.6;">
-    <p>Created by <strong>Fuzuli Medya</strong> © 2026</p>
-    </footer>
 </body>
 </html>
