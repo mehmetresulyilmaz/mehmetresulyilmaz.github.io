@@ -3,139 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehmet Resul Yılmaz | Portfolyo</title>
+
+    <!-- SEO -->
+    <title>Mehmet Resul Yılmaz | Full Stack Yazılım Geliştirici & Portfolyo</title>
+    <meta name="description" content="Mehmet Resul Yılmaz'ın kişisel yazılım portfolyosu. Full Stack Developer projeleri, Linux, 3D Baskı ve Maker dünyası.">
+    <meta name="google-site-verification" content="VDoGPqrDfHs5YGWsfkMr9U7KKNyYj3LINZfjNpLW7sY" />
+    <meta name="keywords" content="Mehmet Resul Yılmaz, Yazılım Mühendisi, Linux, Maker, 3D Printing, Web Geliştirici, Portfolyo, GitHub, Full Stack">
+    <meta name="author" content="Mehmet Resul Yılmaz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mehmetresulyilmaz.github.io/">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (v6.6.0 for latest icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
+            darkMode: 'class', // Manual toggle enabled
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Manrope', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { darkBg: '#050505', darkSurface: '#121212', darkBorder: '#2a2a2a' }
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        // Light Mode Colors (Clean Tech)
+                        lightBg: '#f3f4f6', 
+                        lightSurface: '#ffffff',
+                        lightBorder: '#e5e7eb',
+                        lightText: '#1f2937',
+
+                        // Dark Mode Colors (Cyberpunk/Terminal)
+                        darkBg: '#050505',
+                        darkSurface: '#121212',
+                        darkSurfaceHover: '#1e1e1e',
+                        darkBorder: '#2a2a2a',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #f3f4f6; background-image: radial-gradient(#d1d5db 1px, transparent 1px); background-size: 24px 24px; transition: all 0.5s ease; }
-        html.dark body { background-color: #050505; background-image: radial-gradient(#262626 1px, transparent 1px); }
-        .bento-card { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .bento-card:hover { transform: translateY(-2px); }
-        .film-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200'/%3E"); }
-        /* Suno AI Müzik Barları */
-        .bar { background: #a855f7; bottom: 1px; height: 3px; position: absolute; width: 3px; animation: sound 0ms -800ms linear infinite alternate; }
-        @keyframes sound { 0% { opacity: .35; height: 3px; } 100% { opacity: 1; height: 15px; } }
-    </style>
-</head>
-<body class="min-h-screen flex items-center justify-center p-4 lg:p-8 pt-16 relative">
-    <div class="film-grain"></div>
+        body {
+            /* Base (Light) */
+            background-color: #f3f4f6;
+            color: #1f2937;
+            /* Dot pattern for Light mode */
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 24px 24px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
 
-    <button onclick="document.documentElement.classList.toggle('dark')" class="fixed top-4 right-4 z-50 p-3 rounded-full border bg-white/80 dark:bg-neutral-800/80 dark:text-yellow-400 shadow-lg">
-        <i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:block"></i>
-    </button>
+        /* Dark Mode Override */
+        html.dark body {
+            background-color: #050505;
+            color: #e5e5e5;
+            /* Dot pattern for Dark mode */
+            background-image: radial-gradient(#262626 1px, transparent 1px);
+        }
 
-    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(140px,auto)] z-10">
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-2px);
+            z-index: 10;
+        }
+
+        /* Light Mode Shadow */
+        .bento-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Dark Mode Shadow & Glow */
+        html.dark .bento-card {
+            box-shadow: none;
+        }
+        html.dark .bento-card:hover {
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+        }
+        /* Inner glow only for dark mode */
+        html.dark .bento-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
         
-        <div class="bento-card md:col-span-2 md:row-span-2 rounded-3xl p-8 bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder group">
-            <div class="absolute top-0 right-0 p-6 opacity-5 dark:opacity-10"><i class="fas fa-fingerprint text-9xl transform rotate-12"></i></div>
-            <img src="https://biyogra.fi/storage/post/logo/690a59bff35c51762286015.jpg" class="w-24 h-24 rounded-2xl border-2 dark:border-neutral-800 shadow-xl mb-6" onerror="this.src='https://ui-avatars.com/api/?name=Resul+Yilmaz&background=333&color=fff'">
-            <h1 class="text-3xl font-bold dark:text-white">M. Resul Yılmaz</h1>
-            <p class="text-gray-500 text-xs mb-4 font-mono"><i class="fas fa-map-marker-alt"></i> Samsun, TR</p>
-            <div class="flex gap-2">
-                <span class="px-3 py-1 bg-gray-100 dark:bg-neutral-800 text-xs rounded-lg">Linux</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-neutral-800 text-xs rounded-lg">Cinema</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-neutral-800 text-xs rounded-lg">Maker</span>
-            </div>
-        </div>
+        .bar {
+            background: #a855f7;
+            bottom: 1px;
+            height: 3px;
+            position: absolute;
+            width: 3px;
+            animation: sound 0ms -800ms linear infinite alternate;
+        }
+        
+        @keyframes sound {
+            0% { opacity: .35; height: 3px; }
+            100% { opacity: 1; height: 15px; }
+        }
 
-        <div class="bento-card md:col-span-2 rounded-3xl p-8 flex items-center justify-center text-center bg-black text-white">
-            <blockquote class="font-serif italic text-xl">"Görünene değil, görünmeyene odaklanan bir izleyiciyim."</blockquote>
-        </div>
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f3f4f6; }
+        ::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 3px; }
+        
+        html.dark ::-webkit-scrollbar-track { background: #050505; }
+        html.dark ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 
-        <a href="https://boxd.it/dHmNN" target="_blank" class="bento-card rounded-3xl p-6 bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder group">
-            <div class="flex justify-between items-start">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-green-50 text-green-600 dark:bg-green-900/20"><i class="fas fa-film"></i></div>
-                <i class="fas fa-arrow-right -rotate-45 text-gray-400 group-hover:text-green-500 transition-colors"></i>
-            </div>
-            <h3 class="font-bold mt-4 dark:text-white group-hover:text-green-500">Letterboxd</h3>
-            <p class="text-[10px] text-gray-500">İzlemedeyim</p>
-        </a>
+        /* Theme Toggle Button Animation */
+        .theme-toggle-btn {
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:active {
+            transform: scale(0.9);
+        }
+        html.dark .sun-icon { display: block; }
+        html.dark .moon-icon { display: none; }
+        html:not(.dark) .sun-icon { display: none; }
+        html:not(.dark) .moon-icon { display: block; }
+    </style>
 
-        <a href="https://youtube.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder group">
-            <div class="flex justify-between items-start">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-red-50 text-red-600 dark:bg-red-900/20"><i class="fab fa-youtube"></i></div>
-                <i class="fas fa-play text-xs text-gray-400 group-hover:text-red-500 transform group-hover:scale-110 transition-all"></i>
-            </div>
-            <h3 class="font-bold mt-4 dark:text-white group-hover:text-red-500">YouTube</h3>
-            <p class="text-[10px] text-gray-500">Kanalım</p>
-        </a>
-
-        <a href="https://500px.com/p/mehmetryilmaz" target="_blank" class="bento-card md:col-span-2 rounded-3xl p-6 flex items-center justify-between bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder group">
-            <div class="flex items-center gap-5">
-                <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-gray-100 dark:bg-neutral-800 text-2xl dark:text-white"><i class="fas fa-camera"></i></div>
-                <div><h3 class="font-bold text-lg dark:text-white">500px Galeri</h3><p class="text-xs text-gray-500">Vizörümden yansıyanlar.</p></div>
-            </div>
-            <i class="fas fa-chevron-right text-gray-300 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1"></i>
-        </a>
-
-        <a href="https://suno.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder group">
-            <div class="flex justify-between items-start relative z-10">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-purple-50 text-purple-600 dark:bg-purple-900/20"><i class="fas fa-music"></i></div>
-                <i class="fas fa-external-link-alt text-[10px] text-gray-400 group-hover:text-purple-500"></i>
-            </div>
-            <h3 class="font-bold mt-4 dark:text-white relative z-10">Suno AI</h3>
-            <div class="flex items-end gap-1 h-3 mt-2">
-                <div class="bar bg-purple-500" style="left:1px; animation-duration: 474ms;"></div>
-                <div class="bar bg-purple-500" style="left:5px; animation-duration: 433ms;"></div>
-                <div class="bar bg-purple-500" style="left:9px; animation-duration: 407ms;"></div>
-                <div class="bar bg-purple-500" style="left:13px; animation-duration: 458ms;"></div>
-            </div>
-        </a>
-
-        <a href="https://medium.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 flex flex-col items-center justify-center bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
-            <i class="fab fa-medium-m text-3xl mb-1"></i>
-            <span class="text-sm font-bold">Blog</span>
-        </a>
-
-        <a href="https://github.com/mehmetresulyilmaz" target="_blank" class="bento-card md:col-span-2 rounded-3xl p-6 flex items-center justify-between bg-gray-100 dark:bg-neutral-900 border border-gray-200 dark:border-darkBorder group">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 dark:text-white"><i class="fab fa-github text-xl"></i></div>
-                <div><h3 class="font-bold dark:text-white">GitHub</h3><p class="text-xs text-gray-500">Python & Bash</p></div>
-            </div>
-            <i class="fas fa-code-branch text-gray-400 group-hover:text-black dark:group-hover:text-white"></i>
-        </a>
-
-        <div class="bento-card md:col-span-2 rounded-3xl p-4 flex items-center justify-between px-6 bg-white dark:bg-darkSurface border border-gray-200 dark:border-darkBorder">
-            <div>
-                <span class="text-[10px] font-mono text-gray-400 block mb-1">İLETİŞİM</span>
-                <div class="flex gap-4">
-                    <a href="mailto:mehmetresulyilmaz@gmail.com" class="text-xl text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.instagram.com/m.resulyilmaz" class="text-xl text-gray-400 hover:text-pink-600"><i class="fab fa-instagram"></i></a>
-                    <a href="https://bsky.app/profile/mehmetresulyilmaz.bsky.social" class="text-xl text-gray-400 hover:text-blue-500"><i class="fa-brands fa-bluesky"></i></a>
-                    <a href="https://www.linkedin.com/in/mehmetresulyilmaz" class="text-xl text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="h-10 w-px bg-gray-100 dark:bg-neutral-800"></div>
-            <div class="text-right">
-                <span class="text-[10px] font-mono text-gray-400 block">SYS.STATUS</span>
-                <span class="text-xs font-bold text-green-500 uppercase">Online</span>
-            </div>
-        </div>
-
-        <footer class="md:col-span-4 py-12 text-center order-10 w-full">
-            <p class="text-sm font-sans opacity-50 dark:text-neutral-400">
-                Created by <strong class="text-gray-900 dark:text-white font-semibold underline decoration-purple-500/30">Fuzuli Medya</strong> © 2026
-            </p>
-        </footer>
-    </div>
-
+    <!-- Theme Initialization Script -->
     <script>
-        // Tema hatıraları
+        // Sayfa yüklenmeden temayı ayarla (Flash'ı önler)
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 lg:p-8 pt-16 lg:pt-8 relative">
+
+    <div class="film-grain"></div>
+
+    <!-- Theme Toggle Button (Fixed Position) -->
+    <button onclick="toggleTheme()" 
+            class="theme-toggle-btn fixed top-4 right-4 z-50 p-3 rounded-full shadow-lg border backdrop-blur-md
+                   bg-white/80 border-gray-200 text-gray-800
+                   dark:bg-neutral-800/80 dark:border-neutral-700 dark:text-yellow-400
+                   hover:scale-110 focus:outline-none"
+            aria-label="Toggle Theme">
+        <!-- Sun Icon (for Dark Mode) -->
+        <i class="fas fa-sun sun-icon text-lg"></i>
+        <!-- Moon Icon (for Light Mode) -->
+        <i class="fas fa-moon moon-icon text-lg"></i>
+    </button>
+
+    <!-- GRID LAYOUT -->
+    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(140px,auto)] z-10">
+        
+        <!-- 1. Profile Card (Top Left - 2x2) -->
+        <div class="bento-card md:col-span-2 md:row-span-2 rounded-3xl p-6 md:p-8 flex flex-col justify-between group order-1 
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-darkSurfaceHover">
+            
+            <div class="absolute top-0 right-0 p-6 opacity-5 dark:opacity-10 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity">
+                <i class="fas fa-fingerprint text-9xl text-black dark:text-white transform rotate-12"></i>
+            </div>
+            
+            <div class="flex items-start justify-between relative z-10">
+                <div class="relative">
+                    <img src="https://biyogra.fi/storage/post/logo/690a59bff35c51762286015.jpg" 
+                         alt="Resul" 
+                         class="w-20 h-20 md:w-24 md:h-24 rounded-2xl object-cover border-2 border-gray-100 dark:border-neutral-800 shadow-xl"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Resul+Yilmaz&background=333&color=fff'">
+                </div>
+                <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.5)]" title="System Active"></div>
+            </div>
+            
+            <div class="mt-6 md:mt-8 relative z-10">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white tracking-tight mb-2">M. Resul Yılmaz</h1>
+                <div class="flex items-center gap-2 text-gray-500 dark:text-neutral-500 font-mono text-xs mb-4">
+                    <i class="fas fa-map-marker-alt"></i> Samsun, TR
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 rounded-lg text-xs transition-colors border
+                                 bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200
+                                 dark:bg-neutral-800/50 dark:text-neutral-300 dark:border-neutral-700/50 dark:hover:bg-neutral-800">
+                        Linux
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs transition-colors border
+                                 bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200
+                                 dark:bg-neutral-800/50 dark:text-neutral-300 dark:border-neutral-700/50 dark:hover:bg-neutral-800">
+                        Cinema
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs transition-colors border
+                                 bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200
+                                 dark:bg-neutral-800/50 dark:text-neutral-300 dark:border-neutral-700/50 dark:hover:bg-neutral-800">
+                        Maker
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Quote Card (Top Right - 2x1) -->
+        <div class="bento-card md:col-span-2 rounded-3xl p-6 md:p-8 flex items-center justify-center text-center relative order-2
+                    bg-gradient-to-r from-gray-800 to-black text-white
+                    dark:bg-gradient-to-r dark:from-neutral-900 dark:to-black">
+             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
+             <blockquote class="font-serif italic text-lg md:text-xl text-gray-200 dark:text-neutral-300 relative z-10 leading-relaxed">
+                "Görünene değil, görünmeyene odaklanan bir izleyiciyim."
+            </blockquote>
+        </div>
+
+        <!-- 3. Letterboxd -->
+        <a href="https://boxd.it/dHmNN" target="_blank" class="bento-card rounded-3xl p-6 flex flex-col justify-between group order-3
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-darkSurfaceHover">
+            <div class="flex justify-between items-start">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border
+                            bg-green-50 text-green-600 border-green-100
+                            dark:bg-green-900/20 dark:text-green-500 dark:border-green-900/30">
+                    <i class="fas fa-film"></i>
+                </div>
+                <i class="fas fa-arrow-right -rotate-45 transition-colors
+                          text-gray-400 group-hover:text-green-600
+                          dark:text-neutral-700 dark:group-hover:text-green-500"></i>
+            </div>
+            <div>
+                <h3 class="font-bold mt-4 transition-colors
+                           text-gray-900 group-hover:text-green-600
+                           dark:text-white dark:group-hover:text-green-400">Letterboxd</h3>
+                <p class="text-[10px] mt-1 text-gray-500 dark:text-neutral-500">İzlemedeyim</p>
+            </div>
+        </a>
+
+        <!-- 4. YouTube -->
+        <a href="https://youtube.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 flex flex-col justify-between group order-4 relative overflow-hidden
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-darkSurfaceHover">
+            
+            <div class="absolute -bottom-6 -right-6 w-20 h-20 rounded-full blur-2xl transition-all
+                        bg-red-100 group-hover:bg-red-200
+                        dark:bg-red-600/20 dark:group-hover:bg-red-600/30"></div>
+            
+            <div class="flex justify-between items-start">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border
+                            bg-red-50 text-red-600 border-red-100
+                            dark:bg-red-900/20 dark:text-red-500 dark:border-red-900/30">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <i class="fas fa-play text-xs transition-colors transform group-hover:scale-110
+                          text-gray-400 group-hover:text-red-600
+                          dark:text-neutral-600 dark:group-hover:text-red-500"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <h3 class="font-bold mt-4 transition-colors
+                           text-gray-900 group-hover:text-red-600
+                           dark:text-white dark:group-hover:text-red-400">YouTube</h3>
+                <p class="text-[10px] mt-1 text-gray-500 dark:text-neutral-500">Kanalım</p>
+            </div>
+        </a>
+
+        <!-- 5. 500px -->
+        <a href="https://500px.com/p/mehmetryilmaz" target="_blank" class="bento-card md:col-span-2 rounded-3xl p-6 flex items-center justify-between group order-5
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-darkSurfaceHover">
+            <div class="flex items-center gap-5">
+                 <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl border
+                             bg-gray-100 text-gray-800 border-gray-200
+                             dark:bg-neutral-800 dark:text-white dark:border-neutral-700">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg transition-colors
+                               text-gray-900 group-hover:text-gray-600
+                               dark:text-white dark:group-hover:text-neutral-300">500px Galeri</h3>
+                    <p class="text-xs mt-1 max-w-[200px] text-gray-500 dark:text-neutral-500">Vizörümden yansıyanlar.</p>
+                </div>
+            </div>
+            <div class="hidden sm:block opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
+                 <i class="fas fa-chevron-right text-gray-400 dark:text-neutral-600"></i>
+            </div>
+        </a>
+
+        <!-- 6. Suno AI -->
+        <a href="https://suno.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 flex flex-col justify-between group order-6 relative overflow-hidden
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-darkSurfaceHover">
+            
+            <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full blur-2xl transition-all
+                        bg-purple-100 group-hover:bg-purple-200
+                        dark:bg-purple-600/20 dark:group-hover:bg-purple-600/30"></div>
+            
+            <div class="flex justify-between items-start">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border relative z-10
+                            bg-purple-50 text-purple-600 border-purple-100
+                            dark:bg-purple-900/20 dark:text-purple-400 dark:border-purple-900/30">
+                    <i class="fas fa-music"></i>
+                </div>
+                <i class="fas fa-external-link-alt text-xs group-hover:text-purple-500
+                          text-gray-400 dark:text-neutral-600 dark:group-hover:text-purple-400"></i>
+            </div>
+            
+            <div>
+                <h3 class="font-bold mt-4 transition-colors
+                           text-gray-900 group-hover:text-purple-600
+                           dark:text-white dark:group-hover:text-purple-300">Suno AI</h3>
+                <div class="flex items-end gap-1 h-3 mt-2">
+                    <div class="bar bg-purple-500" style="left:1px; animation-duration: 474ms;"></div>
+                    <div class="bar bg-purple-500" style="left:5px; animation-duration: 433ms;"></div>
+                    <div class="bar bg-purple-500" style="left:9px; animation-duration: 407ms;"></div>
+                    <div class="bar bg-purple-500" style="left:13px; animation-duration: 458ms;"></div>
+                </div>
+            </div>
+        </a>
+
+        <!-- 7. Blog -->
+        <a href="https://medium.com/@mehmetresulyilmaz" target="_blank" class="bento-card rounded-3xl p-6 flex flex-col justify-center items-center text-center group transition-colors relative order-7
+                    bg-white border border-gray-200 hover:bg-black hover:text-white
+                    dark:bg-darkSurface dark:border-darkBorder dark:hover:bg-white dark:hover:text-black">
+            
+            <i class="fab fa-medium-m text-3xl mb-2 transition-colors
+                      text-gray-400 group-hover:text-white
+                      dark:text-neutral-400 dark:group-hover:text-black"></i>
+            <span class="text-sm font-bold tracking-wide text-gray-900 group-hover:text-white dark:text-white dark:group-hover:text-black">Blog</span>
+        </a>
+
+        <!-- 8. GitHub -->
+        <a href="https://github.com/mehmetresulyilmaz" target="_blank" class="bento-card md:col-span-2 rounded-3xl p-6 flex items-center justify-between group order-8
+                    bg-gray-100 border border-gray-200 
+                    dark:bg-neutral-900/50 dark:border-darkBorder">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center border transition-colors
+                            bg-white text-black border-gray-200 group-hover:bg-black group-hover:text-white
+                            dark:bg-white/5 dark:text-white dark:border-white/10 dark:group-hover:bg-white dark:group-hover:text-black">
+                    <i class="fab fa-github text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">GitHub</h3>
+                    <div class="flex gap-2 mt-1">
+                         <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                         <span class="text-xs text-gray-500 dark:text-neutral-400">Python</span>
+                         <span class="w-2 h-2 rounded-full bg-blue-500 ml-1"></span>
+                         <span class="text-xs text-gray-500 dark:text-neutral-400">Bash</span>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-code-branch transition-colors
+                      text-gray-400 group-hover:text-black
+                      dark:text-neutral-700 dark:group-hover:text-white"></i>
+        </a>
+        
+        <!-- 9. Socials & Status -->
+        <div class="bento-card md:col-span-2 rounded-3xl p-4 flex items-center justify-between px-6 md:px-8 gap-4 group order-9
+                    bg-white border border-gray-200 
+                    dark:bg-darkSurface dark:border-darkBorder">
+            
+            <div class="flex flex-col">
+                <span class="text-[10px] font-mono mb-1 text-gray-400 dark:text-neutral-500">İLETİŞİM</span>
+                <div class="flex gap-4 md:gap-6">
+                    <!-- Mail -->
+                    <a href="mailto:mehmetresulyilmaz@gmail.com" class="transition-colors text-xl md:text-2xl
+                              text-gray-400 hover:text-gray-900
+                              dark:text-neutral-400 dark:hover:text-white" title="Mail">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/m.resulyilmaz" class="transition-colors text-xl md:text-2xl
+                              text-gray-400 hover:text-pink-600
+                              dark:text-neutral-400 dark:hover:text-pink-500" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Bluesky (Yeni Eklenen) -->
+                    <a href="https://bsky.app/profile/mehmetresulyilmaz.bsky.social" class="transition-colors text-xl md:text-2xl
+                              text-gray-400 hover:text-blue-500
+                              dark:text-neutral-400 dark:hover:text-blue-400" title="Bluesky">
+                        <i class="fa-brands fa-bluesky"></i>
+                    </a>
+                    <!-- X (Twitter) -->
+                    <a href="#" class="transition-colors text-xl md:text-2xl
+                              text-gray-400 hover:text-black
+                              dark:text-neutral-400 dark:hover:text-white" title="X / Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/mehmetresulyilmaz" class="transition-colors text-xl md:text-2xl
+                              text-gray-400 hover:text-blue-700
+                              dark:text-neutral-400 dark:hover:text-blue-600" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="h-10 w-px block bg-gray-200 dark:bg-neutral-800"></div>
+            
+            <div class="flex flex-col items-end">
+                <span class="text-[10px] font-mono text-gray-400 dark:text-neutral-600">SYS.STATUS</span>
+                <span class="text-xs font-bold tracking-wider text-green-600 dark:text-green-500">ONLINE</span>
+            </div>
+        </div>
+        <footer class="md:col-span-4 py-8 mt-2 text-center order-10 w-full">
+            <p class="text-sm font-sans opacity-40 dark:text-neutral-500 tracking-wide">
+                Created by <strong class="text-gray-900 dark:text-white font-semibold">Fuzuli Medya</strong> © 2026
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Toggle Logic -->
+    <script>
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
         }
     </script>
 </body>
